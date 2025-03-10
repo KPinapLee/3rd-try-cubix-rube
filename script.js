@@ -19,7 +19,7 @@ document.querySelectorAll('.face').forEach(face => {
     face.appendChild(sticker);
   }
 });
-
+// help
 // =============================================
 // Rotation Logic (Fixed)
 // =============================================
