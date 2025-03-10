@@ -1,5 +1,5 @@
 const cube = document.querySelector('.cube');
-const MOVE_DELAY = 50; // 0.3 seconds cooldown
+const MOVE_DELAY = 50; // 50ms cooldown
 
 // Initialize cube state
 const cubeState = {
@@ -238,13 +238,14 @@ function queueMove(move, ...args) {
 }
 
 // =============================================
-// Visual Update
+// Visual Update with Smooth Animations
 // =============================================
 
 function updateCube() {
   Object.entries(cubeState).forEach(([face, colors]) => {
     const stickers = document.querySelector(`.${face}`).querySelectorAll('.sticker');
     stickers.forEach((sticker, i) => {
+      sticker.style.transition = 'background-color 0.2s ease-in-out';
       sticker.style.backgroundColor = colors[i];
     });
   });
